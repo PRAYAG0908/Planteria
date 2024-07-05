@@ -1,0 +1,117 @@
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div id="landing-page">
+<div id="pageblue">
+<h1 id="Head-line">Plant a Tree,<br>
+Save a Life.
+</h1>
+</div>
+</div>
+
+
+
+<div class="product-container">
+{% for plant in plants %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant.name}}</p>
+<p>Rs : {{ plant.price|floatformat:2}}</p>
+<button><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+<div class="indoor-plants">
+<div class="filter-plants" id="unique">
+<h2 class="title">Indoor-plants</h2>
+<p class="title"><i>The Natural Home Purifiers</i> </p>
+{% for plant in indoorplants %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
+</div>
+<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+{% endfor %}
+</div>
+<div>
+
+
+<div class="indoor-plants">
+<div class="filter-plants" id="unique">
+<h2 class="title">Flowering-plants</h2>
+<p class="title"><i>Add Colors to your garden</i> </p>
+{% for plant in floweringplants %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
+</div>
+<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+{% endfor %}
+</div>
+<div>
+
+<div class="indoor-plants">
+<div class="filter-plants" id="unique">
+<h2 class="title">Big Size Plants</h2>
+<p class="title"><i>Green, Greener, Greenest</i> </p>
+{% for plant in largeplants %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
+</div>
+<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+{% endfor %}
+</div>
+<div>
+
+<div class="indoor-plants">
+<div class="filter-plants" id="unique">
+<h2 class="title">Fertilizer</h2>
+<p class="title"><i>Give your plant their Treat</i> </p>
+{% for plant in fertilizers %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
+</div>
+<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+{% endfor %}
+</div>
+<div>
+
+<div class="indoor-plants">
+<div class="filter-plants" id="unique">
+<h2 class="title">Gardening Tools</h2>
+<p class="title"><i>Groom Your Garden</i> </p>
+{% for plant in Gardeningtools %}
+<div class="product-list">
+<img class="images" src='{{plant.image.url}}' alt="" />
+<div class="product-details">
+<p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
+</div>
+<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+</div>
+{% endfor %}
+</div>
+<div>
+
+
+<div class="footer">
+<h3 style="color:#a3b18a;">Planteria</h3>
+<div>
+{% endblock content %}
