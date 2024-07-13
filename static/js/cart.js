@@ -10,7 +10,31 @@ for (var i = 0; i < UpdateButtons.length; i++) {
             console.log("Log in first!")
         }
         else{
-            console.log("Loggedin ,sending data...")
+            UpdateUserData(productId,action)
         }
+    })
+}
+
+function UpdateUserData(productId,action){
+    console.log("Loggedin ,sending data...")
+
+    var url = '/updatecart/'
+
+    fetch(url,{
+        method: 'POST',
+        headers :{
+            'Content-Type':'application/json',
+            'X-CSRFToken':csrftoken,
+        },
+        body:JSON.stringify({'productId':productId, 'action' : action})
+    })
+
+    .then((respone)=>{
+       return respone.json()
+    })
+
+    .then((data)=>{
+        console.log('data', data)
+        location.reload()
     })
 }
