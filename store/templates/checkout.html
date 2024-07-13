@@ -9,10 +9,33 @@ Planteria | Checkout
 
 <div class="checkout-outer-section">
     <div class="checkout-inner-section">
-        <h3>Order Summary</h3>
-        <button>Back To Cart</button>
+        <h3>Order Summary</h3><hr>
+        <button class="new-button"><a href="{% url 'cart' %}">Back To Cart</a></button>
+        <hr>
+        {% for item in items %}
+        <div class="checkout-items">
+            <div style="flex:1;"><img class="rowimages" src="{{item.product.image.url}}" alt=""></div>
+            <div style="flex:1;">{{item.product}}</div>
+            <div style="flex:1;">₹ {{item.product.price|floatformat:2}}</div>
+            <div style="flex:1;">x{{item.quantity}}</div>
+        </div>
+        {% endfor %}
+        <hr>
+        <h6>Items: {{order.get_cart_quantity}}</h6>
+        <h6>Total: ₹{{order.get_cart_total|floatformat:2}}</h6>
     </div>
     
-    <div class="checkout-inner-section"></div>
+    <div class="checkout-inner-section">
+        <h5>Personal Information</h5>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email">
+        <hr>
+        <h5>Shipping Details</h5>
+        <input type="text" placeholder="Address">
+        <input type="text" placeholder="State">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="Pincode">
+        <button class="new-button" style="background-color: green; color: white;border: none;width: 100%;">Continue</button>
+    </div>
 </div>
 {% endblock content %}

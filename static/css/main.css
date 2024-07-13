@@ -41,7 +41,7 @@ body{
 }
 
 .navbar{
-	background-color: #344e41;
+	background-color: #344e41e1;
 	color: #b7e4c7 ;
 	margin: 1rem 0 0 3rem;
 	width: 92%;
@@ -49,6 +49,7 @@ body{
 	position: fixed;
 	z-index: 99;
 	top: 0;
+	backdrop-filter: blur(5px);
 }
 
 .box-element{
@@ -177,13 +178,19 @@ body{
 	margin-left: 1rem;
 }
 
-#addtocart{
+.addtocart{
 	border-radius: 25px;
-	background-color: #344e41;
-	color: #b7e4c7;
 	padding: 0.3rem 1rem;
 	margin-left: 4.5rem;
 	border: 1px solid #344e41;
+	transition: 100ms;
+}
+
+.addtocart:hover{
+	background-color: #344e41;
+	color: #b7e4c7;
+	transform: translateY(-0.2rem);
+	transition: 300ms;
 }
 
 
@@ -226,7 +233,6 @@ body{
 
 .cart-view{
 	margin-top:7rem;
-	background-color: red;
 }
 
 .cart-portion{
@@ -238,7 +244,7 @@ body{
 	box-shadow: 0 0 9px 1px grey;
 }
 
-.cart-portion button{
+.new-button{
 	text-align: center;
 	padding: 0.3rem 0.9rem;
 	background-color: white;
@@ -247,13 +253,49 @@ body{
 .checkout-outer-section{
 	margin-top: 7rem;
 	width: 100%;
-	background-color: red;
 }
 
 .checkout-inner-section{
-	width: 50%;
+	width: 45%;
 	margin: 1rem auto;
 	background-color: white;
 	box-shadow: 0 0 10px 1px grey;
 	padding: 1rem;
+}
+
+.checkout-inner-section input{
+	display: inline;
+	width: 49%;
+	margin: 0.5rem auto;
+	padding: 0.2rem;
+	background-color:rgba(37, 99, 37, 0.189);
+	border: none;
+}
+
+::placeholder{
+	color:#344e41;
+}
+
+.checkout-items{
+	display: flex;
+}
+
+#plusminus{
+	margin-right:9px;
+	padding: 0 7px;
+	border:1px solid #344e41;
+	cursor: pointer;
+	font-weight: 900;
+	font-size: larger;
+	padding-bottom: 4px;
+}
+
+#plusminus1{
+	margin-left:9px;
+	padding: 0 10px;
+	border:1px solid #344e41;
+	cursor: pointer;
+	font-weight: 900;
+	font-size: larger;
+	padding-bottom: 4px;
 }

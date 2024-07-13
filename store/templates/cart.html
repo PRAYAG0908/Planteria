@@ -10,7 +10,7 @@ Planteria | Cart
 <div class="cart-view">
 <div class="cart-portion">
     <h2 style="text-align:center;">My Cart</h2>
-    <button><a href="{% url 'store' %}">Continue Shopping</a></button>
+    <button class="new-button"><a href="{% url 'store' %}">Continue Shopping</a></button>
     <hr style="color: rgb(196, 193, 193);">
     <h6>Total : ₹{{order.get_cart_total|floatformat:2}}</h6>
     <h6>Quantity : {{order.get_cart_quantity}}</h6>
@@ -28,12 +28,12 @@ Planteria | Cart
 <div class="cart-row">
 <div style="flex:1;"><img class="rowimages" src="{{item.product.image.url}}" alt=""></div>
 <div style="flex: 1;">{{item.product}}</div>
-<div style="flex: 1;">{{item.quantity}}</div>
+<div style="flex: 1;"><span id="plusminus">+</span>{{item.quantity}}<span id="plusminus1">-</span></div>
 <div style="flex: 1;">{{item.order}}</div>
 <div style="flex: 1;">₹ {{item.get_total|floatformat:2}}</div>
 </div><hr style="color: rgb(196, 193, 193);">
 {% endfor %}
-<button style="background-color: green; color: white;border: none;"><a href="{% url 'checkout' %}">Checkout</a></button>
+<button class="new-button" style="background-color: green; color: white;border: none;"><a href="{% url 'checkout' %}">Checkout</a></button>
 </div>
 </div>
 {% endblock content %}

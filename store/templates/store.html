@@ -28,7 +28,7 @@
 <div class="product-list">
 <img class="images" src='{{plant.image.url}}' alt="" />
 <div class="product-details">
-<p>{{plant.name}}</p>
+<p>{{plant.id}}</p>
 <p>Rs : {{ plant.price|floatformat:2}}</p>
 <button><a href="{% url 'cart' %}">Add To Cart<a></button>
 </div>
@@ -47,7 +47,7 @@
 <div class="product-details">
 <p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
 </div>
-<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+<button  data-product={{plant.id}} , data-action="add" class="addtocart update-cart">Add To Cart</button>
 </div>
 {% endfor %}
 </div>
@@ -64,7 +64,7 @@
 <div class="product-details">
 <p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
 </div>
-<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+<button data-product={{plant.id}}  data-action="add" class="addtocart update-cart">Add To Cart</button>
 </div>
 {% endfor %}
 </div>
@@ -80,7 +80,7 @@
 <div class="product-details">
 <p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
 </div>
-<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+<button class="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
 </div>
 {% endfor %}
 </div>
@@ -96,7 +96,7 @@
 <div class="product-details">
 <p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
 </div>
-<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+<button class="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
 </div>
 {% endfor %}
 </div>
@@ -112,7 +112,7 @@
 <div class="product-details">
 <p>{{plant}}</p><p> ₹ {{ plant.price|floatformat:2}}</p>
 </div>
-<button id="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
+<button class="addtocart"><a href="{% url 'cart' %}">Add To Cart<a></button>
 </div>
 {% endfor %}
 </div>
